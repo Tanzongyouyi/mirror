@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" href="https://tanzongyouyi.github.io/images/avatar.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谭总有一的网盘</title>
+    <style>
+        /* 全局样式重置和基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 使用你提供的background.jpg作为背景 */
+            background-image: url(https://picx.zhimg.com/v2-865d05eafabf98cde5854a018f2a6a44_1440w.jpg?source=172ae18b);
+            /* 确保背景图片覆盖整个屏幕 */
+            background-size: cover;
+            /* 确保背景图片不会重复 */
+            background-repeat: no-repeat;
+            /* 确保背景图片固定在视口 */
+            background-attachment: fixed;
+            /* 设置一个字体，让中文显示更美观 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            /* 设置页面背景色，以防图片加载前或加载失败时的空白 */
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* 页面顶部标题样式 */
+        .page-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white; /* 白色文字，在深色背景上更清晰 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加阴影，增强可读性 */
+        }
+
+        /* 主内容框样式 */
+        .mainbox {
+            /* 继承自.page-title的定位上下文，相对于body定位 */
+            position: absolute;
+            top: 100px; /* 放在标题下方 */
+            left: 50%;
+            /* 将mainbox的左侧边界移动到父容器水平中心 */
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 800px; /* 设置一个最大宽度，在大屏幕上不至于过宽 */
+            background-color: white;
+            border-radius: 8px; /* 圆角边框 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影效果，增加层次感 */
+            overflow: hidden; /* 让内部元素的圆角也能生效 */
+            
+            /* --- 新增的半透明效果 --- */
+            opacity: 0.85;
+        }
+
+        /* 标题栏（表头）样式 */
+        .titlebox {
+            display: flex; /* 使用Flexbox布局 */
+            background-color: #f7f8fa; /* 浅灰色背景，区分于内容区 */
+            border-bottom: 1px solid #e8e8e8; /* 底部边框 */
+            font-weight: bold;
+            color: #666;
+        }
+
+        /* 表头中的每一列样式 */
+        .titlebox div {
+            padding: 15px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* 表头各列的宽度设置 */
+        .titlebox .col-name {
+            flex: 2; /* 文件名列占更多空间 */
+        }
+        .titlebox .col-type {
+            flex: 1;
+        }
+        .titlebox .col-size {
+            flex: 1;
+        }
+        .titlebox .col-uploader {
+            flex: 1;
+        }
+
+        /* 文件内容区的样式 */
+        .file-list {
+            /* 继承mainbox的定位上下文 */
+        }
+
+        /* 每一行文件的样式 */
+        .file-list .file-item {
+            display: flex; /* 同样使用Flexbox布局，与表头对齐 */
+            border-bottom: 1px solid #ebeef5; /* 底部边框，分隔每一行 */
+            transition: background-color 0.2s; /* 鼠标悬停时的背景色过渡动画 */
+        }
+
+        /* 鼠标悬停在文件行上时的效果 */
+        .file-list .file-item:hover {
+            background-color: #f5f7fa;
+        }
+
+        /* 文件内容区中每一列的样式 */
+        .file-list .file-item div {
+            padding: 12px 15px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* 文件内容区各列的宽度，与表头保持一致 */
+        .file-list .file-item .col-name {
+            flex: 2;
+            font-weight: 500;
+        }
+        .file-list .file-item .col-type {
+            flex: 1;
+            color: #909399;
+        }
+        .file-list .file-item .col-size {
+            flex: 1;
+            color: #909399;
+        }
+        .file-list .file-item .col-uploader {
+            flex: 1;
+            color: #909399;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 页面顶部标题 -->
+    <h1 class="page-title">谭总有一的网盘</h1>
+
+    <!-- 主内容框 -->
+    <div class="mainbox">
+        
+        <!-- 标题栏（表头） -->
+        <div class="titlebox">
+            <div class="col-name">文件名</div>
+            <div class="col-type">文件类型</div>
+            <div class="col-size">文件大小</div>
+            <div class="col-uploader">上传者</div>
+        </div>
+
+        <!-- 文件内容区 -->
+        <div class="file-list">
+            
+            <!-- 
+                在这里添加你的文件列表。
+                复制下面的 <div class="file-item">...</div> 整块来添加新文件。
+                请根据你的实际文件填写信息。
+            -->
+            
+            <!-- 示例文件 1 -->
+             <div class="file-item">
+                <div class="col-name"><a href="https://github.com/Tanzongyouyi/pan/upload/main">⬆️上传文件</a></div>
+                <div class="col-type">LINK</div>
+                <div class="col-size">∞</div>
+                <div class="col-uploader">SYSTEM</div>
+            </div>
+            
+             <div class="file-item">
+                <div class="col-name"><a href="https://tanzongyouyi.github.io/">⬅️回到主站</a></div>
+                <div class="col-type">LINK</div>
+                <div class="col-size">∞</div>
+                <div class="col-uploader">SYSTEM</div>
+            </div>
+
+            <div class="file-item">
+                <div class="col-name"><a href="https://github.com/Tanzongyouyi/Tanzongyouyi.github.io/blob/main/_config.yml">主站配置文件</a></div>
+                <div class="col-type">yml文件</div>
+                <div class="col-size">1.52 KB</div>
+                <div class="col-uploader">谭总有一</div>
+            </div>
+
+            <!-- 
+                在这里继续添加你的文件...
+                <div class="file-item">
+                    <div class="col-name">你的文件名</div>
+                    <div class="col-type">文件类型</div>
+                    <div class="col-size">文件大小</div>
+                    <div class="col-uploader">谭总有一</div>
+                </div>
+            -->
+
+        <!-- 新增的说明文字 -->
+        <div class="description">
+            <p>这里是谭总有一的个人网盘！这里存储了我的一些常用文件和资源。</p>
+            <p>你可以通过点击文件名来下载或查看，部分office文件提供在线查看支持。如有任何问题，请提出issue。</p>
+            <p>Copyright (c) 2025 Tanzongyouyi & Wave Web Studio</p>
+        </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
